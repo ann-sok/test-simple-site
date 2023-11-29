@@ -1,0 +1,111 @@
+.header {
+  padding: 30px 0;
+  
+
+  &__wrapper{
+    position: relative;
+    min-height: 144px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    
+  }
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: calc(50% - (180px / 2));
+  }
+  &__inner {
+    // display: grid;
+    // grid-template-columns: repeat(3, 1fr) 180px repeat(3, 1fr);
+    // grid-template-rows: 1;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    list-style: none;
+    width: 100%;
+    
+    text-align: center;
+  }
+  &__list {
+  display: inline-block;
+    &:nth-child(3) {
+      margin-right: 120px;
+    }
+    &:nth-child(4) {
+      margin-left: 120px;
+    }
+    // &:first-child>.header__link:active>.icon-home {
+    //   fill: $color-opasity;
+    // }
+  }
+  &__link {
+    padding: 0.75em 1em;
+    &:hover {
+      color: $color-opasity;
+    }
+    &:active {
+      color: $color-opasity;
+
+    }
+  }
+  &__logo-img {
+    width: 180px;
+  }
+//   &__empty-place {
+// width: 240px;
+//   }
+
+}
+
+
+.icon-home {
+  width: 14px;
+  fill: $color-opasity;
+}
+
+.home {
+  color: white;
+  background-color: lightblue;
+  background-image: url("../image/banner-3\ \(1\).jpg");
+  &__inner {
+    font-style: normal;
+  }
+  &__text {
+    font-size: 15px;
+    font-family: filson-soft-bold;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  &__title {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.1em;
+    letter-spacing: 0em;
+    font-family: filson-soft;
+  }
+
+}
+
+.btn {
+    color: $color-gray;
+    border-radius: 300px;
+    transition: .1s background-color linear;
+    padding: 13px 26px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 0 0 #ebebeb;
+    background-color: #fff;
+    border-color: #fff;
+
+  &__icon{
+    fill: $color-gray;
+    vertical-align: bottom;
+  }
+}

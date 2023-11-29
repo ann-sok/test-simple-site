@@ -1,0 +1,54 @@
+.amenities {
+  font-style: normal;
+  text-align: center;
+  color: white;
+  background-color: rgb(86, 146, 242);
+  background-image: url("../image/banner-5-2500.jpg");
+  padding-top: 34px;
+  &__container {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+  &__title {
+    font-family: proxima-nova;
+    font-size: 32px;
+    font-family: filson-soft;
+    font-weight: 500;
+    line-height: 1.3em;
+    letter-spacing: .01em;
+    text-transform: none;
+    max-width: 75%;
+    margin: 0 auto 34px;
+  }
+  &__text {
+    display: block;
+    font-family: proxima-nova-bold;
+    font-size: 16px;
+    line-height: 1.6em;
+    letter-spacing: .3px;
+    margin-bottom: 97px;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 2;
+    list-style: none;
+    margin: 0 0;
+    padding-bottom: 137px;
+  }
+  &__item {
+    // width: 16.6667%;
+    padding: 17px;
+  }
+  &__icon {
+    width: 100%;
+    margin-bottom: 34px;
+  }
+  &__label {
+    font-family: proxima-nova-bold;
+    font-size: 15px;
+    line-height: 1.4em;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+}
