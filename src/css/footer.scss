@@ -1,0 +1,80 @@
+.footer {
+  background-color: $color-red;
+  text-align: center;
+  color: white;
+  font-family: $font-title;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  &__container {
+    padding-top: 6.8rem;
+    padding-bottom: 5.66rem;
+  }
+  &__title {
+    font-size: 30px;
+    line-height: 1.2em;
+    margin-bottom: 2rem;
+  }
+  &__text {
+    font-size: 95%;
+    margin-bottom: 2.26rem;
+  }
+  &__link {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    &:hover {
+      border-bottom: 1px solid rgba(255, 255, 255, 1)
+    }
+  }
+  &__logo {
+    max-width: 314px;
+  }
+}
+
+.subscribe {
+  &__form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5.33rem;
+  }
+  &__input {
+    padding: 1em;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.12);
+    font-family: inherit;
+    font-size: 15px;
+    line-height: normal;
+    outline: none;
+    margin-right: 0.667rem;
+    font-weight: 400;
+    font-family: 'font2';
+    min-width: 244px;
+
+    &::placeholder {
+      color: rgb(192, 191, 191);
+      // font-size: 95%;
+    }
+  }
+  &__btn {
+    width: auto;
+    padding: 1em 2.5em;
+    vertical-align: middle;
+    border-radius: 300px;
+    outline: none;
+    color: $color-gray;
+    background-color: #fff;
+    border: 1px solid #fff; 
+    font-family: inherit;
+    font-size: 15px;
+    line-height: normal;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    word-wrap: none;
+  }
+  
+}

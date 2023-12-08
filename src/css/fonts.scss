@@ -1,22 +1,22 @@
 
 @font-face {
-  font-family: "ProximaNovaBlack";
+  font-family: "proxima-nova";
   src: url("../fonts/ProximaNovaBlack/ProximaNovaBlack.eot");
   src: url("../fonts/ProximaNovaBlack/ProximaNovaBlack.eot?#iefix")format("embedded-opentype"),
   url("../fonts/ProximaNovaBlack/ProximaNovaBlack.woff") format("woff"),
   url("../fonts/ProximaNovaBlack/ProximaNovaBlack.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 900;
 }
 
 @font-face {
-  font-family: "proxima-nova-bold";
+  font-family: "proxima-nova";
   src: url("../fonts/ProximaNovaBold/ProximaNovaBold.eot");
   src: url("../fonts/ProximaNovaBold/ProximaNovaBold.eot?#iefix")format("embedded-opentype"),
   url("../fonts/ProximaNovaBold/ProximaNovaBold.woff") format("woff"),
   url("../fonts/ProximaNovaBold/ProximaNovaBold.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 700;
 }
 
 @font-face {
@@ -26,7 +26,7 @@
   url("../fonts/ProximaNovaRegular/ProximaNovaRegular.woff") format("woff"),
   url("../fonts/ProximaNovaRegular/ProximaNovaRegular.ttf") format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 @font-face {
@@ -34,10 +34,51 @@
   src: url("../fonts/FilsonSoftRegular/Filson\ Soft\ W03\ Regular.eot");
   src: url("../fonts/FilsonSoftRegular/Filson\ Soft\ W03\ Regular.ttf") format("truetype");
   src: url("../fonts/FilsonSoftRegular/Filson\ Soft\ W03\ Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
 }    
 @font-face {
-  font-family: "filson-soft-bold";
+  font-family: "filson-soft";
+  src: url("../fonts/Filson-Soft-Regular.ttf") format(truetype);
+  font-style: normal;
+  font-weight: 500;
+}    
+@font-face {
+  font-family: "filson-soft";
   src: url("../fonts/FilsonSoftBold/Filson\ Soft.eot");
   src: url("../fonts/FilsonSoftBold/Filson\ Soft.ttf") format("truetype");
   src: url("../fonts/FilsonSoftBold/Filson\ Soft.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
 }    
+
+@font-face {
+  font-family: "font1";
+  src: url("../fonts/fromsite/KFOlCnqEu92Fr1MmEU9fBBc4.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}    
+@font-face {
+  font-family: "font2";
+  src: url("../fonts/fromsite/KFOmCnqEu92Fr1Mu4mxK.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}    
+@font-face {
+  font-family: "font3";
+  src: url("../fonts/fromsite/KFOmCnqEu92Fr1Mu5mxKOzY.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}    
+@font-face {
+  font-family: "font4";
+  src: url("../fonts/fromsite/KFOmCnqEu92Fr1Mu4mxK\ (1).woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}   
+@font-face {
+  font-family: "font5";
+  src: url("../fonts/fromsite/KFOmCnqEu92Fr1Mu4mxK\ (2).woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}   

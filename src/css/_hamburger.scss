@@ -1,0 +1,63 @@
+.hamburger {
+  display: none;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1002;
+  top: 30px;
+  left: 30px;
+  padding: 0;
+  vertical-align: middle;
+  line-height: 16px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  @include media768 {
+    display: block;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+  .line{
+    display: block;
+    width: 22px;
+    height: 2px;
+    
+    background-color: #ecf0f1;
+    position: absolute;
+    transition: transform .1s 0s ease-in-out,top .1s .1s ease-in-out;
+    transform-origin: 50% 50%;
+    margin-bottom: 8px;
+    &:nth-child(1) {
+      
+      top: 0;
+    }
+    &:nth-child(2) {
+      transition: opacity 0s .15s linear;
+      top: 7px;
+    }
+    &:nth-child(3) {
+      top: 14px;
+      
+    }
+  }
+  
+}
+
+.hamburger.is-active .line:nth-child(1){
+  transition: top .1s .1s ease-in-out,transform .1s .2s ease-in-out;
+  top: 7px;
+  transform: rotate(45deg);
+}
+.hamburger.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+.hamburger.is-active .line:nth-child(3){
+  transition: top .1s .1s ease-in-out,transform .1s .2s ease-in-out;
+  top: 7px;
+  transform: rotate(-45deg);
+}
