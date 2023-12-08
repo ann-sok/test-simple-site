@@ -1,0 +1,62 @@
+.reviews {
+  
+  &__container {
+    max-width: 523px;
+    margin: 0 auto;
+    padding: 114px 17px 0;
+  }
+  &__title{
+    text-align: center;
+    font-family: $font-title;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.3em;
+    letter-spacing: .01em;
+    margin-bottom: 34px;
+  }
+  &__wrapper {
+    text-align: left;
+    padding-bottom: 1rem;
+    font-size: 1rem;
+  }
+  &__item {
+    color: $color-gray-dark;
+    &:not(:last-of-type) {
+      margin-bottom: 30px;
+    }
+    &:last-of-type {
+      margin-bottom: 45px;
+    }
+
+  }
+  &__head {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 5px;
+  }
+  &__name {
+    font-size: 18px;
+    font-family: $font-title;
+    font-weight: 500;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+
+  }
+  &__rating {
+    margin-left: 5px;
+  }
+  &__star {}
+  &__icon {
+    margin-left: auto;
+    width: 25px;
+  }
+  &__date {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &__text {
+  }
+  &__powered {
+
+  }
+}

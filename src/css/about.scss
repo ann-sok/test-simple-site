@@ -4,8 +4,9 @@
   color: $color-gray;
   font-style: normal;
 
-  font-family: filson-soft;
+  font-family: $font-title;
   word-wrap: break-word;
+  padding-bottom: 68px;
   &__container {
     display: flex;
     max-width: 1080px;
@@ -13,7 +14,7 @@
     margin: auto;
   }
   &__item {
-    padding: 17px;
+    padding: 0 17px 17px;
   }
   &__img {
     width: 100%;
@@ -25,13 +26,10 @@
     line-height: 1.4em;
     letter-spacing: .07em;
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
   }
   &__text {
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: .3px;
-    line-height: 1.6em;
+
   }
 }
 .link-red {
