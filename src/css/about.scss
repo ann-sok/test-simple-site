@@ -1,26 +1,35 @@
 .about {
-  background-color: white;
+  // background-color: white;
   text-align: center;
   color: $color-gray;
   font-style: normal;
 
-  font-family: $font-title;
+  
   word-wrap: break-word;
-  padding-bottom: 68px;
+  // padding-bottom: 68px;
   &__container {
     display: flex;
-    max-width: 1080px;
-    padding: 30px 34px;
-    margin: auto;
+    // max-width: 1080px;
+    // padding: 5.66rem 2.2667rem 9.067rem;
+    // margin: auto;
+    padding-top: 2rem;
+    @include media638 {
+      flex-direction: column;
+      // padding: 3.8rem 1.333rem 7.2rem;
+    }
   }
   &__item {
     padding: 0 17px 17px;
+    @include media638 {
+      padding: 0 0 17px;
+    }
   }
   &__img {
     width: 100%;
     margin-bottom: 34px;
   }
   &__title {
+    font-family: $font-title;
     font-weight: bold;
     font-size: 14px;
     line-height: 1.4em;
