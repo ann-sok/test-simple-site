@@ -74,11 +74,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
       // Now we loop through sections to get height, top and ID values for each
     sections.forEach(current => {
       const sectionHeight = current.offsetHeight;
-      console.log(sectionHeight)
       const sectionTop = current.offsetTop - headerHeight;
-      console.log(sectionTop)
       const sectionId = current.getAttribute("id");
-      console.log(sectionId)
 
         /*
       - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
