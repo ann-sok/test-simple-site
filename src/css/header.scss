@@ -3,9 +3,11 @@
   margin-bottom: 69px;
   background: linear-gradient(to bottom,#7898be,rgba(120,152,190,0));
   width: 100%;
+
   @include media638 {
     padding: 20px 0;
     margin-bottom: 63px;
+    
   }
   &__container {
     margin: 0 auto;
@@ -21,6 +23,13 @@
       justify-content: center;
       min-height: auto;
     }
+    @include media768 {
+     
+    }
+    @include media638 {
+      
+    }
+    
   }
   &__logo {
     position: absolute;
@@ -35,15 +44,11 @@
   }
 
   &__inner {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr) 180px repeat(3, 1fr);
-    // grid-template-rows: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     width: 100%;
-    // text-align: center;
     margin-left: 46px;
     gap: 5px;
 
@@ -56,8 +61,7 @@
       right: 0;
       z-index: 10;
       background: $color-red;
-      // background: linear-gradient(to bottom,#7898be ,rgba(120,152,190,0) 188px, $color-red 100%);
-      background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,0.97) 120px);
+      // background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,0.97) 120px);
       flex-direction: column;
       margin: 0;
       padding: 100px 15px;
@@ -67,6 +71,34 @@
     }
     &.is-active {
       display: flex;
+    }
+    &.is-fixed {
+      background-color: $color-red;
+      width: 100%;
+      height: 42px;
+      min-height: auto;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 5px;
+      z-index: 1000;
+      white-space: normal;
+      transform: translate3d(0, -100%, 0);
+      & .header__list {
+        margin: 0;
+      }
+      
+    }
+    &.scroll-up {
+      transition: transform 0.3s ease, visibility 0s 0.3s linear;
+      transform: translate3d(0, 0, 0);
+
+    }
+    &.gradient {
+      background: $color-red;
+      background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
     }
   }
   &__list {
@@ -116,6 +148,9 @@
     }
     &.active {
       color: $color-opasity;
+      & .icon-home {
+        fill: $color-opasity;
+      }
     }
   }
   &__logo-img {
