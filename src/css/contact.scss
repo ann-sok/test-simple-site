@@ -1,13 +1,18 @@
 .contact {
   &__container {
+    background-color: white;
     display: grid;
     grid-template-columns: 1fr minmax(45%, 65.9%);
-    border: 1px solid yellow;
     padding-top: 97px;
-    padding-bottom: 119px;
+    // padding-bottom: 119px;
+    @include media638 {
+      grid-template-columns: 1fr;
+      padding-top: 122px;
+    }
   }
   &__wrapper {
     margin-right: 2.26rem;
+    
   }
   &__title {    
     font-family: $font-title;
@@ -21,6 +26,11 @@
   &__item {
     &:not(:last-of-type) {
       margin-bottom: 3.26rem;
+    }
+    @include media638 {
+      &:last-of-type {
+        margin-bottom: 3.26rem;
+      }
     }
   }
   &__label {    
@@ -53,6 +63,9 @@
         -o-filter: grayscale(100%);
          filter: grayscale(100%);
   &__wrapper {
-
+    margin-bottom: 1.8rem;
+    @include media638 {
+      margin-bottom: 0.86rem;
+    }
   }
 }

@@ -7,17 +7,31 @@
   letter-spacing: 0.01em;
   text-transform: none;
   &__container {
-    padding-top: 6.8rem;
+    padding-top: 4.53rem;
     padding-bottom: 5.66rem;
+    @include media638 {
+      padding-top: 1.33rem;
+      padding-bottom: 2.467rem;
+    }
   }
+
   &__title {
     font-size: 30px;
     line-height: 1.2em;
     margin-bottom: 2rem;
+    margin-top: 2.26rem;
+    @include media638 {
+      margin-top: 3.56rem;
+    }
   }
   &__text {
     font-size: 95%;
     margin-bottom: 2.26rem;
+    font-family: proxima-nova;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: .3px;
+    line-height: 1.6em;
   }
   &__link {
     color: inherit;
@@ -30,6 +44,7 @@
   }
   &__logo {
     max-width: 314px;
+    width: 100%;
   }
 }
 
@@ -40,6 +55,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 5.33rem;
+    @include media468 {
+      flex-direction: column;
+      margin-bottom: 4.86rem;
+    }
   }
   &__input {
     padding: 1em;
@@ -53,7 +72,10 @@
     font-weight: 400;
     font-family: 'font2';
     min-width: 244px;
-
+    @include media468 {
+      margin-right: 0;
+      margin-bottom: 1.067rem;
+    }
     &::placeholder {
       color: rgb(192, 191, 191);
       // font-size: 95%;
@@ -77,4 +99,25 @@
     word-wrap: none;
   }
   
+}
+
+.back-to-top{
+  color: #fff;
+  display: none;
+  text-decoration: none;
+  line-height: 1.25;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+  padding: 0.75em 1em;
+  transition: color .1s 0s ease-in-out;
+  @include media768 {
+    display: block;
+  }
+  
+
+  &:hover {
+    color: #ccc;
+  }
 }

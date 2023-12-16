@@ -1,8 +1,17 @@
 .header {
   padding: 30px 0;
-  margin-bottom: 80px;
-  
+  margin-bottom: 69px;
+  background: linear-gradient(to bottom,#7898be,rgba(120,152,190,0));
+  width: 100%;
 
+  @include media638 {
+    padding: 20px 0;
+    margin-bottom: 63px;
+    
+  }
+  &__container {
+    margin: 0 auto;
+  }
   &__wrapper{
     position: relative;
     min-height: 144px;
@@ -14,6 +23,13 @@
       justify-content: center;
       min-height: auto;
     }
+    @include media768 {
+     
+    }
+    @include media638 {
+      
+    }
+    
   }
   &__logo {
     position: absolute;
@@ -28,16 +44,13 @@
   }
 
   &__inner {
-    // display: grid;
-    // grid-template-columns: repeat(3, 1fr) 180px repeat(3, 1fr);
-    // grid-template-rows: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     width: 100%;
-    // text-align: center;
     margin-left: 46px;
+    gap: 5px;
 
     @include media768 {
       display: none;
@@ -48,8 +61,7 @@
       right: 0;
       z-index: 10;
       background: $color-red;
-      // background: linear-gradient(to bottom,#7898be ,rgba(120,152,190,0) 188px, $color-red 100%);
-      background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
+      // background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,0.97) 120px);
       flex-direction: column;
       margin: 0;
       padding: 100px 15px;
@@ -59,6 +71,34 @@
     }
     &.is-active {
       display: flex;
+    }
+    &.is-fixed {
+      background-color: $color-red;
+      width: 100%;
+      height: 42px;
+      min-height: auto;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 5px;
+      z-index: 1000;
+      white-space: normal;
+      transform: translate3d(0, -100%, 0);
+      & .header__list {
+        margin: 0;
+      }
+      
+    }
+    &.scroll-up {
+      transition: transform 0.3s ease, visibility 0s 0.3s linear;
+      transform: translate3d(0, 0, 0);
+
+    }
+    &.gradient {
+      background: $color-red;
+      background: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
     }
   }
   &__list {
@@ -96,12 +136,21 @@
       font-size: 30px;
       padding: 0.5em 0;
     }
+    @include media638 {
+      font-size: 24px;
+
+    }
     &:hover {
       color: $color-opasity;
     }
     &:active {
       color: $color-opasity;
-
+    }
+    &.active {
+      color: $color-opasity;
+      & .icon-home {
+        fill: $color-opasity;
+      }
     }
   }
   &__logo-img {
@@ -119,30 +168,56 @@
 
 
 .icon-home {
-  width: 14px;
-  fill: $color-opasity;
-  vertical-align: bottom;
+  width: 13px;
+  fill: white;
+  // vertical-align: bottom;
+  &:hover {
+    fill: $color-opasity;
+  }
+  &:active {
+    fill: $color-opasity;
+  }
   @include media768 {
-    width: 30px;
+    width: 26px;
   }
 }
 
-.home {
+.hero {
+  position: relative;
   color: white;
-  background-color: lightblue;
   background-image: url("../image/banner-3\ \(1\).jpg");
+  background-position-y: -108px;
   background-size: cover;
+  background-repeat: no-repeat;
   padding-bottom: calc(215px + 60px);
-  border: 1px solid green;
+  @include media1680 {
+    padding-bottom: 166px;
+    background-position-x: 22%;
+    background-position-y: 0;
+  }
+  @include media638 {
+    padding-bottom: 144px;
+    
+    background-position-x: 42%;
+  }
   &__wrapper {
     font-style: normal;
-    max-width: 850px;
+    max-width: 1046px;
     margin: 0 auto;
+    @include media638 {
+      padding: 0 17px;
+    }
     
   }
   &__inner {
     padding: 17px;
-    margin-right: 240px;
+    margin-left: calc((1 / 12)*100%);
+    max-width: calc((7 / 12)*100%);
+    @include media638 {
+      max-width: none;
+      width: 100%;
+      margin-left: 0;
+    }
   }
   &__text {
     font-size: 15px;
@@ -160,29 +235,38 @@
     letter-spacing: 0em;
     font-family: $font-title;
     margin-bottom: 34px;
+    @include media638 {
+      font-size: 36px;
+    }
   }
 
 }
 
 .btn {
   display: inline-block;
-    color: $color-gray;
-    border-radius: 300px;
-    transition: .1s background-color linear;
-    padding: 13px 26px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 2px 0 0 #ebebeb;
-    background-color: #fff;
-    border-color: #fff;
+  color: $color-gray;
+  border-radius: 300px;
+  transition: .1s background-color linear;
+  padding: 13px 26px;
+  min-width: 203px;
+  font-size: 14px;
+  line-height: 1.28;
+  font-family: $font-title;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 0 0 #ebebeb;
+  background-color: #fff;
+  border-color: #fff;
+  transition: .1s background-color linear;
+  -webkit-font-smoothing: antialiased;
 
   &__icon{
     fill: $color-gray;
-    vertical-align: bottom;
+    vertical-align: text-bottom;
+    height: 17px;
   }
 }
 
