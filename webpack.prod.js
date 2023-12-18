@@ -1,24 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
-  // print: './src/app.js',
   output: {
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    filename: 'my-first-webpack.bundle.js',
-    // clean: true
-    // filename: 'bundle.js',
-    // path: path.resolve(__dirname, 'dist'),
-    // assetModuleFilename: 'assets/[name][ext]',
-    // clean: true
-  },
-  devServer: {
-    port: 3000,
-    hot:true,
-    open:true,
-    watchFiles: ['./**/*']
+    assetModuleFilename: 'assets/[name][ext]',
+    clean: true
   },
   module: {
     rules: [
@@ -56,7 +47,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: './fonts/**/[name][ext]',
+          filename: './fonts/[name][ext]',
         },
       },
     ],
@@ -64,9 +55,28 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html',
+      minify: {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
+      },
     }),
     new MiniCssExtractPlugin({
       filename: 'styles.css',
     }),
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          ecma: 6,
+        },
+      }),
+    ],
+  },
 };
