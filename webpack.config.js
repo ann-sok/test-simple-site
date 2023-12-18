@@ -6,13 +6,13 @@ module.exports = {
   entry: './src/index.js',
   // print: './src/app.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'my-first-webpack.bundle.js',
-    // clean: true
-    // filename: 'bundle.js',
     // path: path.resolve(__dirname, 'dist'),
-    // assetModuleFilename: 'assets/[name][ext]',
+    // filename: 'my-first-webpack.bundle.js',
     // clean: true
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[name][ext]',
+    clean: true
   },
   devServer: {
     port: 3000,

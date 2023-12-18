@@ -4,7 +4,6 @@
     display: grid;
     grid-template-columns: 1fr minmax(45%, 65.9%);
     padding-top: 97px;
-    // padding-bottom: 119px;
     @include media638 {
       grid-template-columns: 1fr;
       padding-top: 122px;

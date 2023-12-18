@@ -1,24 +1,48 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   // hamburger menu
+  const windowWidth = window.innerWidth;
   const body = document.querySelector('body');
   const menuBtn = body.querySelector('.hamburger');
   const menuWrapper = body.querySelector('.header__inner');
-  
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    menuBtn.addEventListener('click', function (e) {
-      menuBtn.classList.toggle('is-active');
-      menuWrapper.classList.toggle('is-active');
-      body.classList.toggle('menu-is-active');
-    })
-  }
-
+  const headerLinks = menuWrapper.querySelectorAll('.header__link');
   // show navigation on scroll
   const headerStyle = getComputedStyle(menuWrapper)
   const headerHeight = parseInt(headerStyle.height.slice(0, -2));
-  const menuBtnStyle = getComputedStyle(menuBtn)
-  const menuBtnHeight = parseInt(menuBtnStyle.top.slice(0, -2)) + parseInt(menuBtnStyle.height.slice(0, -2))
   const sections = document.querySelectorAll("section[id]");
-  const headerLinks = menuWrapper.querySelectorAll('.header__link');
+
+  const hamburgerToggle = () => {
+    menuBtn.classList.toggle('is-active');
+    menuWrapper.classList.toggle('is-active');
+    body.classList.toggle('menu-is-active');
+  }
+  const mediaCheck = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      menuBtn.addEventListener('click', hamburgerToggle)
+      if(!window.scrollY || window.scrollY===0) {
+        menuWrapper.classList.add("gradient");
+      }
+    } else {
+      menuBtn.removeEventListener('click', hamburgerToggle)
+      menuWrapper.classList.remove("gradient");
+    }
+
+  }
+  mediaCheck();
+  window.onresize = mediaCheck;
+
+  headerLinks.forEach((link) => {
+    link.addEventListener('click', function() {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          menuWrapper.classList.remove("is-active")
+          menuWrapper.classList.remove("scroll-up")
+          menuBtn.classList.remove("is-active")
+          body.classList.remove('menu-is-active');
+      }
+    })
+  })
+
+
+  
   
   // listening to scroll events greatly impacts performance because it fires too often. Especially on mobile devices, it fires like crazy. So, we want to add some threshold not to fire too many events. a 100ms delay of firing.
   
@@ -49,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         menuWrapper.classList.remove("is-fixed");
       }
     } else {
-      if (windowY > windowH + menuBtnHeight) {
+      if (windowY > windowH) {
         menuBtn.classList.add("is-fixed");
         menuWrapper.classList.remove("gradient");
       } else {
@@ -57,17 +81,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         menuWrapper.classList.add("gradient");
       }
     }
-
-    headerLinks.forEach((link) => {
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        if(menuWrapper.classList.contains("is-active")) {
-          menuWrapper.classList.remove("is-active")
-          menuWrapper.classList.remove("scroll-up")
-          menuBtn.classList.remove("is-active")
-          body.classList.remove('menu-is-active');
-        }
-      }
-    })
 
       // Now we loop through sections to get height, top and ID values for each
     sections.forEach(current => {
@@ -93,12 +106,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   window.addEventListener("scroll", throttle(validateHeader, 100));
 
+
   // Open text after choose question
   const faqName = body.querySelectorAll('.faq__name');
   faqName.forEach(function (item, index) {
     item.addEventListener ('click', function () {
       faqName.forEach((item2, index2) => {
-        // item2.classList.remove('is-active', index2 === index);
         if (index2 !== index) {
           item2.classList.remove('is-active');
         }

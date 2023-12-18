@@ -2,7 +2,6 @@
   background-color: $color-light-blue;
 
   &__container {
-    // padding: 93px 34px 110px;
     padding-bottom: 7.33rem;
     @include media638 {
       padding-bottom: 6.93rem;
@@ -65,7 +64,6 @@
     &.is-active {
       & + .faq__text {
         display: block;
-        // transform: translateX(0%);
       }
     }
   }
@@ -81,20 +79,6 @@
     font-size: 1rem;
     color: $color-gray;
     margin-top: 1rem;
-
-
     transition: transform .1s 0s ease-in-out;
-
-
-    // transform: translateX(-100%);
-    // -webkit-transition: transform 1s;
-    // -ms-transition: transform 1s;
-    // -o-transition: transform 1s;
-    // -moz-transition: transform 1s;
-    // transition: transform 1s;
   }
 }
-
-// .display-block {
-//   display: block;
-// }
