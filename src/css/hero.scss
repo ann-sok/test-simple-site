@@ -1,0 +1,59 @@
+.hero {
+  position: relative;
+  color: white;
+  background-image: url("../image/banner-3\ \(1\).jpg");
+  background-position-y: -108px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: calc(215px + 60px);
+  padding-top: toRem(290);
+  @include media1680 {
+    padding-bottom: 166px;
+    background-position-x: 22%;
+    background-position-y: 0;
+  }
+  @include media638 {
+    padding-bottom: 144px;
+    
+    background-position-x: 42%;
+  }
+  &__wrapper {
+    font-style: normal;
+    max-width: 1046px;
+    margin: 0 auto;
+    @include media638 {
+      padding: 0 17px;
+    }
+    
+  }
+  &__inner {
+    padding:0 17px 17px;
+    margin-left: calc((1 / 12)*100%);
+    @include media638 {
+      max-width: none;
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  &__text {
+    font-size: 15px;
+    font-family: $font-title;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.1em;
+    letter-spacing: 0em;
+    font-family: $font-title;
+    margin-bottom: 34px;
+    @include media638 {
+      font-size: 36px;
+    }
+  }
+
+}
