@@ -2,9 +2,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // hamburger menu
   const windowWidth = window.innerWidth;
   const body = document.querySelector('body');
-  const menuBtn = body.querySelector('.hamburger');
-  const menuWrapper = body.querySelector('.header__inner');
-  const headerLinks = menuWrapper.querySelectorAll('.header__link');
+  const menuBtn = body.querySelector('.btn--hamburger');
+  const menuWrapper = body.querySelector('.nav');
+  const headerLinks = menuWrapper.querySelectorAll('.nav-list__link');
   // show navigation on scroll
   const headerStyle = getComputedStyle(menuWrapper)
   const headerHeight = parseInt(headerStyle.height.slice(0, -2));
@@ -97,9 +97,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         windowY > sectionTop &&
         windowY <= sectionTop + sectionHeight
       ){
-        menuWrapper.querySelector(".header__link[href*=" + sectionId + "]").classList.add("active");
+        menuWrapper.querySelector(".nav-list__link[href*=" + sectionId + "]").classList.add("active");
       } else {
-        menuWrapper.querySelector(".header__link[href*=" + sectionId + "]").classList.remove("active");
+        menuWrapper.querySelector(".nav-list__link[href*=" + sectionId + "]").classList.remove("active");
       }
     });        
   };

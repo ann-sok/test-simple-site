@@ -1,5 +1,5 @@
 import "./css/style.scss";
 
-import "./script/hamburger"
+import "./script/main"
 
 
