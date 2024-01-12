@@ -1,150 +1,100 @@
 .header {
+  position: absolute;
+  z-index: 10;
   padding: 30px 0;
-  margin-bottom: 69px;
   background: linear-gradient(to bottom,#7898be,rgba(120,152,190,0));
   width: 100%;
 
   @include media638 {
     padding: 20px 0;
     margin-bottom: 63px;
-    
   }
   &__container {
-    margin: 0 auto;
+    padding: 0;
   }
-  &__wrapper{
-    position: relative;
-    min-height: 144px;
+}
+
+.nav {
+  position: relative;
+  min-height: 144px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+ 
+  @include media938 {
+    // flex-wrap: wrap;
+    justify-content: center;
+    min-height: auto;
+  }
+  @include media768 {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: $color-red;
+    flex-direction: column;
+    margin: 0;
+    padding: 100px 15px;
+    -webkit-animation: bugfix infinite 1s;
+    transition: opacity .14s .14s ease-in-out,visibility 0s 0s linear,transform .14s .18s ease-in-out;  
+  }
+  @include media638 {
+    
+  }
+  &.is-active {
     display: flex;
+    & .nav__logo {
+      display: none;
+    }
+  }
+  &.is-fixed {
+    background-color: $color-red;
     width: 100%;
-    align-items: center;
-    @include media938 {
-      flex-wrap: wrap;
-      justify-content: center;
-      min-height: auto;
-    }
-    @include media768 {
-     
-    }
-    @include media638 {
-      
+    height: 42px;
+    min-height: auto;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    z-index: 1000;
+    white-space: normal;
+    transform: translate3d(0, -100%, 0);
+    // & .header__list {
+    //   margin: 0;
+    // }
+    & .nav__logo {
+      display: none;
     }
     
   }
+  &.scroll-up {
+    transition: transform 0.3s ease, visibility 0s 0.3s linear;
+    transform: translate3d(0, 0, 0);
+
+  }
+  &.gradient {
+    background-color: $color-red;
+    background-image: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
+  }
+    
+  
   &__logo {
-    position: absolute;
-    top: 0;
-    left: calc(50% - (180px / 2));
-    @include media938 {
-      position: static;
-      top: auto;
-      left: auto;
-      z-index: 11;
-    }
-  }
-
-  &__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    width: 100%;
-    margin-left: 46px;
-    gap: 5px;
-
-    @include media768 {
-      display: none;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      background: $color-red;
-      flex-direction: column;
-      margin: 0;
-      padding: 100px 15px;
-      -webkit-animation: bugfix infinite 1s;
-      transition: opacity .14s .14s ease-in-out,visibility 0s 0s linear,transform .14s .18s ease-in-out;  
-    }
-    &.is-active {
-      display: flex;
-    }
-    &.is-fixed {
-      background-color: $color-red;
-      width: 100%;
-      height: 42px;
-      min-height: auto;
-      margin: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      padding: 5px;
-      z-index: 1000;
-      white-space: normal;
-      transform: translate3d(0, -100%, 0);
-      & .header__list {
-        margin: 0;
-      }
-      
-    }
-    &.scroll-up {
-      transition: transform 0.3s ease, visibility 0s 0.3s linear;
-      transform: translate3d(0, 0, 0);
-
-    }
-    &.gradient {
-      background-color: $color-red;
-      background-image: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
-    }
-  }
-  &__list {
-    &:nth-child(3) {
-      margin-right: 120px;
-      @include media938 {
-        margin-right: 0;
-      }
-    }
-    &:nth-child(4) {
-      margin-left: 120px;
-      @include media938 {
-        margin-left: 0;
-      }
-    }
-  }
-  &__link {
+    // position: absolute;
+    // top: 0;
+    // left: calc(50% - (180px / 2));
     display: block;
-    color: white;
-    font-family: $font-text;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 13px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-decoration: none;
-    line-height: 1em;
-    padding: 0.75em 1em;
-    transition: color .1s 0s ease-in-out;
-    @include media768 {
-      font-size: 30px;
-      padding: 0.5em 0;
-    }
-    @include media638 {
-      font-size: 24px;
-
-    }
-    &:hover {
-      color: $color-opasity;
-    }
-    &:active {
-      color: $color-opasity;
-    }
-    &.active {
-      color: $color-opasity;
-      & .icon-home {
-        fill: $color-opasity;
-      }
+    width: fit-content;
+    margin: 0 toRem(32);
+    @include media938 {
+      // position: static;
+      // top: auto;
+      // left: auto;
+      // z-index: 11;
     }
   }
   &__logo-img {
@@ -155,11 +105,80 @@
     }
   }
 
-}
+  &-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    gap: 5px;
+    margin-top: -6px;
+    @include media768 {
+      flex-direction: column;
+    }
+    &:nth-of-type(1) {
+      justify-content: flex-end;
+    }
+    &:nth-of-type(2) {
+      justify-content: flex-start;
 
+    }
+
+    
+    &__item {
+      // &:nth-child(3) {
+      //   margin-right: 120px;
+      //   @include media938 {
+      //     margin-right: 0;
+      //   }
+      // }
+      // &:nth-child(4) {
+      //   margin-left: 120px;
+      //   @include media938 {
+      //     margin-left: 0;
+      //   }
+      // }
+    }
+    &__link {
+      display: block;
+      color: white;
+      font-family: $font-text;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      line-height: 1em;
+      padding: 0.75em 1em;
+      transition: color .1s 0s ease-in-out;
+      @include media768 {
+        font-size: 30px;
+        padding: 0.5em 0;
+      }
+      @include media638 {
+        font-size: 24px;
+  
+      }
+      &:hover {
+        color: $color-opasity;
+      }
+      &:active {
+        color: $color-opasity;
+      }
+      &.active {
+        color: $color-opasity;
+        & .icon-home {
+          fill: $color-opasity;
+        }
+      }
+    }
+  }
+
+}
 
 .icon-home {
   width: 13px;
+  height: 10px;
   fill: white;
   &:hover {
     fill: $color-opasity;
@@ -172,91 +191,6 @@
   }
 }
 
-.hero {
-  position: relative;
-  color: white;
-  background-image: url("../image/banner-3\ \(1\).jpg");
-  background-position-y: -108px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding-bottom: calc(215px + 60px);
-  @include media1680 {
-    padding-bottom: 166px;
-    background-position-x: 22%;
-    background-position-y: 0;
-  }
-  @include media638 {
-    padding-bottom: 144px;
-    
-    background-position-x: 42%;
-  }
-  &__wrapper {
-    font-style: normal;
-    max-width: 1046px;
-    margin: 0 auto;
-    @include media638 {
-      padding: 0 17px;
-    }
-    
-  }
-  &__inner {
-    padding: 17px;
-    margin-left: calc((1 / 12)*100%);
-    max-width: calc((7 / 12)*100%);
-    @include media638 {
-      max-width: none;
-      width: 100%;
-      margin-left: 0;
-    }
-  }
-  &__text {
-    font-size: 15px;
-    font-family: $font-title;
-    font-weight: 500;
-    line-height: 1.4em;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-  }
-  &__title {
-    font-size: 60px;
-    font-weight: 400;
-    line-height: 1.1em;
-    letter-spacing: 0em;
-    font-family: $font-title;
-    margin-bottom: 34px;
-    @include media638 {
-      font-size: 36px;
-    }
-  }
 
-}
 
-.btn {
-  display: inline-block;
-  color: $color-gray;
-  border-radius: 300px;
-  transition: .1s background-color linear;
-  padding: 13px 26px;
-  min-width: 203px;
-  font-size: 14px;
-  line-height: 1.28;
-  font-family: $font-title;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 0 0 #ebebeb;
-  background-color: #fff;
-  border-color: #fff;
-  transition: .1s background-color linear;
-  -webkit-font-smoothing: antialiased;
-
-  &__icon{
-    fill: $color-gray;
-    vertical-align: text-bottom;
-    height: 17px;
-  }
-}
 

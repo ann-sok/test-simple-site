@@ -12,7 +12,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[name][ext]',
-    clean: true
+    // clean: true
   },
   devServer: {
     port: 3000,

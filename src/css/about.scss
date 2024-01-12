@@ -4,8 +4,12 @@
   font-style: normal;
   word-wrap: break-word;
   &__container {
-    display: flex;
+    
     padding-top: 2rem;
+
+  }
+  &__row {
+    display: flex;
     @include media638 {
       flex-direction: column;
     }
@@ -15,23 +19,107 @@
     @include media638 {
       padding: 0 0 17px;
     }
+    &:nth-of-type(3) .about__svg {
+      margin-top: -24px;
+    }
   }
-  &__img {
+  &__img-wrapper {
     width: 100%;
     margin-bottom: 34px;
-  }
-  &__title {
-    font-family: $font-title;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 1.4em;
-    letter-spacing: .07em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  &__text {
+    max-height: 210px;
 
   }
+  &__img {
+  }
+  
+  &__text {
+    & h3 {
+      font-family: $font-title;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 1.4em;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    & p {
+
+    }
+    
+  }
+  &__svg-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 34px;
+    height: auto;
+    // height: 206px;
+    aspect-ratio: 3/2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: #d9e1eb80;
+      height: 100%;
+      width: auto;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+    }
+    
+    
+
+  }
+  &__svg {
+    // stroke: $color-red;
+    // fill: $color-red;
+    z-index: 3;
+    @include media1080 { 
+      height: 68%;
+      width: auto;
+    }
+    @include media638 {
+
+    }
+  }
+}
+.circle--medium::after {
+  content: "";
+  position: absolute;
+  background-color: #d9e1eb80;
+  height: 62%;
+  width: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.circle--medium--right::after {
+  right: 5%;
+  bottom: 5.7%;
+}
+.circle--medium--left::after {
+  left: 2%;
+  bottom: 2.86%;
+}
+.circle--small::after {
+  content: "";
+  position: absolute;
+  background-color: #d9e1eb80;
+  
+  width: auto;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.circle--small--right::after {
+  height: 31%;
+  right: 13%;
+  top: 5.7%;
+}
+.circle--small--left::after {
+  height: 34%;
+  left: 15%;
+  top: 8%;
 }
 .link-red {
   text-decoration: none;

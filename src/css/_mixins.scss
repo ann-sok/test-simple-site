@@ -1,5 +1,14 @@
+@function toRem($size) {
+  @return calc($size / 15 * 1rem);
+}
+
 @mixin media1680 {
   @media (max-width: 1680px){
+      @content;
+  }
+}
+@mixin media1080 {
+  @media (max-width: 1080px){
       @content;
   }
 }
