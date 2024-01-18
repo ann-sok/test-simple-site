@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   const hamburgerToggle = () => {
     menuBtn.classList.toggle('is-active');
     menuWrapper.classList.toggle('is-active');
+    // menuWrapper.classList.remove('is-fixed');
     body.classList.toggle('menu-is-active');
   }
   const mediaCheck = () => {
@@ -24,8 +25,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     } else {
       menuBtn.removeEventListener('click', hamburgerToggle)
       menuWrapper.classList.remove("gradient");
+      menuWrapper.classList.remove("is-active");
+      menuBtn.classList.remove("is-active");
+      body.classList.remove('menu-is-active');
     }
-
   }
   mediaCheck();
   window.onresize = mediaCheck;
@@ -67,12 +70,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (windowY > windowH + headerHeight) {
           menuWrapper.classList.add("scroll-up");
         } else {
-          menuWrapper.classList.remove("scroll-up");
+          
         }
       } else {
         menuWrapper.classList.remove("is-fixed");
       }
     } else {
+      menuWrapper.classList.remove("scroll-up");
+      menuWrapper.classList.remove("is-fixed");
       if (windowY > windowH) {
         menuBtn.classList.add("is-fixed");
         menuWrapper.classList.remove("gradient");
@@ -114,9 +119,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
       faqName.forEach((item2, index2) => {
         if (index2 !== index) {
           item2.classList.remove('is-active');
+          // item2.parentElement.classList.remove('is-active');
         }
       })
       this.classList.toggle('is-active');
+      // this.parentElement.classList.toggle('is-active');
+      // let textExpansion = this.parentElement.querySelector('.faq__text');
+
+      // let prevHeihgt = textExpansion.style.height
+      // textExpansion.style.height = "auto";
+      // let endHeight = getComputedStyle(textExpansion).height;
+      // textExpansion.style.height = prevHeihgt;
+      // textExpansion.offsetHeight;
+      // textExpansion.style.transition = 'height .5s ease-in-out';
+      // textExpansion.style.height = endHeight;
+      // textExpansion.addEventListener('transitionend', function transitionEnd(event) {
+      //   if (event.propertyName == 'height') {
+      //     textExpansion.style.transition = ''
+      //     textExpansion.style.height = 'auto'
+      //     textExpansion.removeEventListener('transitionend', transitionEnd, false)
+      //   }
+      // }, false)
+      
+      // console.log(prevHeihgt)
+      // console.log(getComputedStyle(textExpansion).height);
+      // console.log(textExpansion.offsetHeight);
+      
+      
+      
+      
+    
     })
   })
   

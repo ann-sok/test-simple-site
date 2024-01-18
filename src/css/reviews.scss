@@ -1,7 +1,6 @@
 .reviews {
-  background-color: white;
   &__container {
-    max-width: 523px;
+    padding-top: toRem(145);;
   }
   &__title{
     text-align: center;
@@ -10,7 +9,6 @@
     font-size: 30px;
     line-height: 1.3em;
     letter-spacing: .01em;
-    margin-top: 4rem;
     margin-bottom: 34px;
     @include media638 {
       margin-top: 4.67rem;
@@ -18,29 +16,37 @@
     }
   }
   &__wrapper {
+    max-width: 523px;
     text-align: left;
     font-size: 1rem;
-    margin-bottom: -6px;
+    margin: 0 auto -6px;
     @include media500 {
       margin-bottom: 32px;
     }
   }
   &__item {
     color: $color-gray-dark;
-    &:not(:last-of-type) {
-      margin-bottom: 30px;
-    }
+    margin-bottom: 30px;
     &:last-of-type {
-      margin-bottom: 45px;
+      margin-bottom: 0;
     }
 
   }
-  &__head {
+  &__heading {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
+    gap: 0.5rem;
     margin-bottom: 5px;
     @include media500 {
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
+    }
+  }
+  &__name-block {
+    display: flex;
+    justify-content: start;
+    gap: 0.33rem;
+    @include media500 {
+      flex-direction: column;
     }
   }
   &__name {
@@ -50,26 +56,18 @@
     letter-spacing: .07em;
     text-transform: uppercase;
     @include media500 {
-      order: 1;
       flex-basis: 85%;
     }
   }
   &__rating {
-    margin-left: 5px;
-    @include media500 {
-      order: 3;
-      margin-left: 0;
-    }
+   
   }
   &__star {
     color: #c13e3f;
   }
   &__icon {
-    margin-left: auto;
     width: 25px;
-    @include media500 {
-      order: 2;
-    }
+
   }
   &__date {
     display: block;
@@ -86,6 +84,10 @@
     line-height: 1.6em;
   }
   &__powered {
-
+    margin-top: 3rem;
   }
+}
+
+.rating {
+  
 }

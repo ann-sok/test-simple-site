@@ -2,13 +2,14 @@
   background-color: $color-light-blue;
 
   &__container {
-    padding-bottom: 7.33rem;
+    padding-top: 8.43rem;
+    padding-bottom: 8.47em;
     @include media638 {
-      padding-bottom: 6.93rem;
+      padding-bottom: 8rem;
     }
   }
   &__title {
-    padding: 17px;
+    margin-bottom: toRem(17);
     text-align: center;
     font-family: $font-title;
     font-style: normal;
@@ -17,35 +18,33 @@
     line-height: 1.3em;
     letter-spacing: .01em;
     text-transform: none;
-    margin-top: 0.5rem;
     @include media638 {
-      margin-top: 1.8667rem;
       font-size: 26px;
     }
   }
   &__wrapper {
     display: flex;
     flex-wrap: nowrap;
+    column-gap: toRem(34);
     @include media638 {
       flex-direction: column;
     }
   }
   &__inner {
-    padding: 17px;
-    flex-basis: 500%;
+    flex-basis: 50%;
     @include media638 {
-      padding: 17px 0;
     }
   }
   &__item {
+    // border: 1px black solid;
 
 
     &:not(:first-child) {
-      margin-top: 1.5em;
+      margin-top: 1.33rem;
     }
     &:not(:last-child) {
       .faq__text {
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
       }
     }
     
@@ -64,6 +63,16 @@
     &.is-active {
       & + .faq__text {
         display: block;
+        // max-height: none;
+        border-top: solid 1px #ccc;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        transition: all 1s ease-out;
+        height: auto;
+      }
+      & + .faq__text p {
+        // display: block;
+        // background-color: aqua;
       }
     }
   }
@@ -74,11 +83,15 @@
   }
   &__text {
     display: none;
-    border-top: solid 1px #ccc;
-    padding-top: 1rem;
-    font-size: 1rem;
-    color: $color-gray;
-    margin-top: 1rem;
-    transition: transform .1s 0s ease-in-out;
+    height: 0px;
+    // overflow: hidden;
+    // transition: all 1s ease-out;
+
+
+    & p {
+      font-size: 1rem;
+      color: $color-gray;
+
+    }
   }
 }

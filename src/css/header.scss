@@ -49,6 +49,10 @@
     & .nav__logo {
       display: none;
     }
+    &.gradient {
+      background-color: $color-red;
+      background-image: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
+    }
   }
   &.is-fixed {
     background-color: $color-red;
@@ -77,10 +81,7 @@
     transform: translate3d(0, 0, 0);
 
   }
-  &.gradient {
-    background-color: $color-red;
-    background-image: linear-gradient(180deg, rgba(120,152,190,1) 0%, rgba(194,63,62,1) 120px);
-  }
+  
     
   
   &__logo {

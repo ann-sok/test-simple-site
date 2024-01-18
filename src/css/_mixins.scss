@@ -18,6 +18,11 @@
   }
 }
 
+@mixin media848 {
+  @media (max-width: 848px){
+      @content;
+  }
+}
 @mixin media768 {
   @media (max-width: 768px){
       @content;

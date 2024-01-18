@@ -5,21 +5,22 @@
   background-color: rgb(86, 146, 242);
   background-image: url("../image/banner-5-2500.jpg");
   background-size: cover;
-  padding-top: 4.13rem;
+  // background: rgba(157,183,218,1);
+  // background: linear-gradient(135deg, rgba(218,225,236,1) 0%, rgba(160,186,219,1) 48%, rgba(157,183,218,1) 100%);
+  
   @include media638 {
     padding-top: 2.867rem;
     background-position: 60% 0;
   }
   &__container {
-    max-width: 944px;
-    margin: 0 auto;
+    
+    padding-top: 11rem;
+    padding-bottom: toRem(140);
     @include media638 {
       padding-bottom: 6.2rem;
     }
   }
-  &__row {
-    
-  }
+  
   &__title {
     font-size: 32px;
     font-family: $font-title;
@@ -28,13 +29,14 @@
     letter-spacing: .01em;
     text-transform: none;
     max-width: 64%;
-    padding-top: 17px;
     margin: 0 auto 34px;
-    @include media638 {
+    @include media848 {
       max-width: none;
+      margin: 0 toRem(17) toRem(34);
+
+    }
+    @include media638 {
       font-size: 26px;
-      padding-left: 17px;
-      padding-right: 17px;
     }
   }
   &__text {
@@ -47,20 +49,19 @@
       margin-bottom: 80px;
     }
   }
-  &__wrapper {
+  &__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding-bottom: 4px;
-   
+    max-width: 876px;
+    margin: 0 auto;
   }
   &__item {
     min-width: 153px;
     max-width: 20%;
     padding: 17px;
-    @include media396 {
+    @include media638 {
       min-width: auto;
       max-width: 100%;
     }
