@@ -1,24 +1,24 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   // print: './src/app.js',
   output: {
     // path: path.resolve(__dirname, 'dist'),
     // filename: 'my-first-webpack.bundle.js',
     // clean: true
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/[name][ext]',
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "assets/[name][ext]",
     // clean: true
   },
   devServer: {
-    port: 3000,
-    hot:true,
-    open:true,
-    watchFiles: ['./**/*']
+    port: 8001,
+    hot: true,
+    open: true,
+    watchFiles: ["./**/*"],
   },
   module: {
     rules: [
@@ -26,22 +26,18 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
         },
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
+            loader: "html-loader",
             options: {
               minimize: true,
             },
@@ -50,23 +46,23 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: './fonts/**/[name][ext]',
+          filename: "./fonts/**/[name][ext]",
         },
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: "styles.css",
     }),
   ],
 };

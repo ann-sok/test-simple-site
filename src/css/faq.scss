@@ -16,7 +16,7 @@
     font-weight: 500;
     font-size: 30px;
     line-height: 1.3em;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
     text-transform: none;
     @include media638 {
       font-size: 26px;
@@ -38,7 +38,6 @@
   &__item {
     // border: 1px black solid;
 
-
     &:not(:first-child) {
       margin-top: 1.33rem;
     }
@@ -47,7 +46,6 @@
         // margin-bottom: 1rem;
       }
     }
-    
   }
   &__name {
     cursor: pointer;
@@ -55,7 +53,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 1.3em;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
     margin-bottom: 0.3em;
     @include media638 {
       font-size: 26px;
@@ -83,15 +81,14 @@
   }
   &__text {
     display: none;
-    height: 0px;
-    // overflow: hidden;
+    max-height: 0px;
+    overflow: hidden;
     // transition: all 1s ease-out;
-
+    transition: max-height 0.2s ease-out;
 
     & p {
       font-size: 1rem;
       color: $color-gray;
-
     }
   }
 }
